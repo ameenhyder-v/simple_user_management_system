@@ -1,0 +1,29 @@
+<% include("../layout/header.ejs") %>
+<link rel="stylesheet" href="/admin/newUser.css">
+
+
+<h1>User Registration</h1>
+
+<form action="/register" method="post">
+    <input type="text" name="name" placeholder="Enter name" required>
+    <br><br>
+    <input type="email" name="email" placeholder="Enter email" required>
+    <br><br>
+    <input type="text" name="mno" placeholder="Enter Mobile" required>
+    <br><br>
+    <input type="password" name="password" placeholder="Enter Password">
+    <br><br>
+    <input type="submit" value="register">
+</form>
+
+<a href="/">Sign-in</a>
+
+<% 
+    if (typeof message !== "undefined"){
+    %>
+        <p style="color: green;"><%= message %></p>
+    <%
+    }
+%>
+
+<% include("../layout/footer.ejs") %>

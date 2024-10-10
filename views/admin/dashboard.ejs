@@ -1,0 +1,47 @@
+<% include("../layout/header.ejs") %>
+<link rel="stylesheet" href="/admin/style.css">
+
+<h1> Dashboard </h1>
+<br>
+<form action="/admin/search" method="get">
+    <input type="text"  name="search" placeholder="Search by Name">
+    <button>Search</button>
+</form>
+
+<br><br>
+<table style="width: 50%;">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Action</th>
+    </tr>
+    <% if(Users.length > 0){
+            for(let i = 0; i < Users.length; i++){ %>
+                <tr>
+                    <td><%= Users[i].name %></td>
+                    <td><%= Users[i].email %></td>
+                    <td><%= Users[i].mobile %></td>
+                    <td> 
+                        <a href="/admin/edit-user?id=<%= Users[i]._id %>">Edit</a>
+                        &nbsp;&nbsp;
+                        <a href="/admin/deleteUser?id=<%= Users[i]._id %>">Delete</a>
+                    </td>
+                </tr>
+
+               <% }
+        }else { %>
+        <tr>
+            <td colspan="3">Users not found</td>
+        </tr>  
+        <% } %>
+</table>
+<br>
+<div class="nav">
+    <a href="/admin/new-user">Add new user</a>
+    <a href="/admin/home">Go to Home</a>
+<br>
+</div> 
+
+
+<% include("../layout/footer.ejs") %>

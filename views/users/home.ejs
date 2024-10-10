@@ -1,0 +1,27 @@
+<% include("../layout/header.ejs") %>
+<link rel="stylesheet" href="/admin/style.css">
+
+
+<h1>whelcome to home page</h1>
+<br>
+<table width="40%">
+    <tr>
+        <td>Name</td>
+        <td> <h3><%= user.name %></h3> </td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><%= user.email %></td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td><%= user.mobile %></td>
+    </tr>
+</table>
+<br>
+<div class="nav">
+    <a href="/edit?id=<%= user._id %>">Edit</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<% include("../layout/footer.ejs") %>

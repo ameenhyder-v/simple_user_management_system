@@ -1,0 +1,24 @@
+<% include("../layout/header.ejs") %>
+<link rel="stylesheet" href="/admin/style.css">
+
+<h1>Welcome, <%= admin.name %></h1>
+
+
+<table style="width: 40%;">
+    <tr>
+        <td>Email</td>
+        <td><%= admin.email %></td>
+    </tr>
+    <tr>
+        <td>Mobile</td>
+        <td><%= admin.mobile %></td>
+    </tr>
+</table>
+<br>
+
+<div class="nav">
+    <a href="/admin/dashboard"> Dashboard </a>
+    <a href="/logout">Logout</a>
+</div>
+
+<% include("../layout/footer.ejs") %>
